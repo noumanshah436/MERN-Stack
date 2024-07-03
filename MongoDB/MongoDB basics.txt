@@ -1,0 +1,85 @@
+C:\Program Files\MongoDB\Server\4.4\bin
+
+cmd
+
+C:\data\db  --  create this heirarchy
+
+Now in cmd :
+
+C:\Program Files\MongoDB\Server\4.4\bin>mongod
+
+now open another cmd window and 
+
+C:\Program Files\MongoDB\Server\4.4\bin>mongo
+
+**************************
+
+add  this to path system variable:
+
+select path from system variable and click edit
+edit-> new 
+
+****************************
+
+
+Now we can open mongodb at any path
+
+so 
+
+open cmd from search 
+1) run mongod (deamon service) first
+2) run mongo in new terminal ( so it will be connected to our database )
+
+*************************************
+
+basic queries in cmd:
+
+1) show all databases
+
+	$ show dbs;     --  
+
+2) create your own databaseand swithc to it
+
+	$ use mydatabase;
+
+
+3) We need insert document (record)  inside this database
+   so first we need to create a collection under this database
+
+	$ db.books.insert({ "name":"MonogoDb book", "id":11});  
+
+	this will create a collection (table) and also insert record in it
+
+4) In MonogoDb table is called collection 
+
+	$ show collections; 
+
+5) inside collection we can store documents(records)
+
+	$ db.books.find()
+
+	list all the data( documents or records) of the collection
+(by default each collection has a unique key "_id")
+
+
+
+
+
+
+ db.getMongo();
+connection to 127.0.0.1:27017
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

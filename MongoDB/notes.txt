@@ -1,0 +1,25 @@
+
+Video
+https://www.youtube.com/watch?v=rU9ZODw5yvU
+
+
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB
+test> use students
+switched to db students
+students> show collections
+
+students> db
+students
+students> db.createCollection('data')
+{ ok: 1 }
+students> show collections
+data
+students> db.data.drop()
+true
+students> db.dropDatabase()
+{ ok: 1, dropped: 'students' }
+students> 
+

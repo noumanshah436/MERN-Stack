@@ -1,0 +1,214 @@
+
+https://docs.mongodb.com/manual/reference/operator/update/
+
+https://www.codewithharry.com/blogpost/mongodb-cheatsheet
+
+************************************************************************************
+
+1. Database Commands
+
+View all databases
+show dbs
+
+Create a new or switch databases 
+use dbName
+
+View current Database
+db
+
+Delete Database 
+db.dropDatabase()
+
+**************************************************************************************
+
+2. Collection Commands
+
+Show Collections
+show collections
+***********
+Create a collection named 'comments'
+db.createCollection('comments')
+***********
+Drop a collection named 'comments'
+db.comments.drop()
+
+**************************************************************************************
+
+3. Row(Document) Commands
+
+Show all Rows in a Collection 
+db.comments.find()
+
+*************************
+
+Show all Rows in a Collection (Prettified or in a formatted way)
+
+db.comments.find().pretty()
+
+*************************
+
+Search in a MongoDb Database
+
+db.comments.findOne({name: 'Harry'})   	--  Find the first row matching the object
+
+db.comments.find({lang:'Python'})    	--  get all records with lang = 'Python'
+
+db.comments.find({lang:'Python', name:'Harry'})    --  get all records where  lang = 'Python' and name='Harry'
+
+db.comments.find({lang:'Python', name:'Rohan'})
+
+*************************
+
+db.comments.findOne({lang:'Python'})     --   get only first record that match
+
+*************************
+
+
+Insert One Row ( basically it is a javascript object):
+
+db.comments.insert({
+    'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 5
+ })
+*************************
+
+Insert many Rows 
+
+db.comments.insertMany([{
+    'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 5
+    }, 
+    {'name': 'Rohan',
+    'lang': 'Python',
+    'member_since': 3
+    },
+    {'name': 'Lovish',
+    'lang': 'Java',
+    'member_since': 4
+}])
+*************************
+
+IN mongodb we can insert record with any attributes
+
+db.comments.insert({
+    'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 5, 
+    'Date': new Date()
+ })
+
+
+*************************
+
+Limit the number of rows in output 
+
+db.comments.find().limit(2)          --  it will get first two records
+
+db.comments.find().limit(100)          --  it will get first 100 records , if records are < 100 , then it will get all records
+ 
+*************************
+
+Count the number of rows in the output
+
+these two show same result , limit only control the printing , so as find is getting all records count will count all:
+
+db.comments.find().count()
+db.comments.find().limit(2).count()
+
+
+db.comments.find({name:'Rohan'}).count()    --- show count of records where name is Rohan
+
+*************************
+
+Sort Records 
+
+db.comments.find().sort({member_since:1 }).pretty()    -- sort in ascending order (increasing order ) on the basis of member_since field
+
+db.comments.find().sort({member_since:-1 }).pretty()    -- sort in descending order (decreasing order) on the basis of member_since field
+
+
+*************************
+
+Update a row
+
+this will update all the records that matches the object attributes ( given as 1st param) with the object passed in 2nd param :
+
+db.comments.update({name: 'Shubham'},
+{'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 51
+})
+
+
+nUpserted   --  if you want a new object , if there is no matched object for update,
+
+		 by default it is false , so you can do like
+
+db.comments.update({name: 'Shubham'},
+{'name': 'Harry',
+    'lang': 'JavaScript',
+    'member_since': 51
+}, {upsert: true})
+
+*************************
+Mongodb Increment Operator
+
+This will increment the value of  member_since by 2 ( member_since : member_since +2 ) with the matched objcet
+
+db.comments.update( {name: 'Rohan'},
+    {
+	$inc:{
+	    member_since: 2
+	}
+    }
+)
+
+*************************
+
+Mongodb Rename Operator
+
+this will rename the field from member_since to  'member'  where name = Rohan
+
+db.comments.update(  {name: 'Rohan'},
+    {
+	$rename:{
+    		member_since: 'member'
+	}
+   }
+)
+
+---------------------------------
+
+this will rename for all (  we remove the filter by passing empty object )
+
+db.comments.update(  {},
+    {
+	$rename:{
+    		member_since: 'member'
+	}
+   }
+)
+
+*************************
+
+
+Delete Row 
+db.comments.remove({name: 'Harry'})   --  remove all records which contain   name='Harry'  attribute 
+
+
+*************************
+
+Less than/Greater than/ Less than or Eq/Greater than or Eq
+
+db.comments.find({member_since: {$lt: 90}})   ---  get all object where  member_since < 90
+db.comments.find({member_since: {$lte: 90}})
+db.comments.find({member_since: {$gt: 90}})
+db.comments.find({member_since: {$gte: 90}})
+
+**************************************************************************************
+**************************************************************************************
+**************************************************************************************
+**************************************************************************************
+
