@@ -2,6 +2,8 @@
 
 //? 1 $eq: Matches values that are equal to the specified value.
 db.products.find({ 'price': { $eq: 699 } })
+db.products.find({ 'name': { $eq: 'Notebook Collection' } })
+db.products.find({ 'name': 'Notebook Collection' })   // same as above
 
 //? 2: $ne: Matches values that are not equal to the specified value.
 db.products.find({ 'price': { $ne: 699 } }).count()
@@ -27,3 +29,5 @@ db.category.find({ name: { $in: ["Travel & Luggage", "Home & Kitchen"] } });
 
 //? $nin: Matches values that are not within the specified array.
 db.products.find({ 'price': { $nin: [249, 129, 39] } }).count()
+
+

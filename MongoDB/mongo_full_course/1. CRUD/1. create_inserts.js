@@ -25,7 +25,8 @@ db.grades.find({"1st_place": true})
 // **************************************************************************
 
 //? 1.c Ordered Inserts vs Unordered Inserts
-//In MongoDB, "ordered" and "unordered" refer to the behavior of a bulk write operation when multiple operations are included in a single batch. {ordered:1 or -1} By default it's true.  If any individual operation fails, MongoDB stops processing further operations in the batch and returns an error.
+//In MongoDB, "ordered" and "unordered" refer to the behavior of a bulk write operation when multiple operations are included in a single batch. {ordered: 1 or -1} 
+// By default it's true. If any individual operation fails, MongoDB stops processing further operations in the batch and returns an error.
 
 //? it's a example of ordered Inserts after the 2nd execution it will stop
 db.product.insertMany([

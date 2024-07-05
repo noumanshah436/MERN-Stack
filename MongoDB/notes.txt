@@ -3,6 +3,27 @@ Video
 https://www.youtube.com/watch?v=rU9ZODw5yvU
 
 
+***************************************
+
+check if the MongoDB Database Server is running:
+
+$ sudo systemctl status mongod 
+
+otherwise start the server(as service)
+
+$ sudo systemctl start mongod
+
+***************************************
+
+run mongodb shell
+
+$ mongosh
+
+
+this will connect with the running server, now we can run our queries here
+***************************************
+
+
 test> show dbs
 admin   40.00 KiB
 config  72.00 KiB

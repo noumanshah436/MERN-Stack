@@ -3,8 +3,8 @@
 
 //* Delete a Single Document:
 //? syntax : db.collectionName.deleteOne({ _id: ObjectId("12345") });
-// db.sales.deleteOne({ _id: 1 });
+db.sales.deleteOne({ _id: 1 });
 
 //* Delete Multiple Documents:
 //? Syntax: db.collectionName.deleteMany({ field: "value" });
-// db.sales.deleteMany({'price':55})
+db.sales.deleteMany({ 'price': 55 })

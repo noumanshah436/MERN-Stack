@@ -23,12 +23,15 @@ db.dropDatabase()
 
 2. Collection Commands
 
-Show Collections
-show collections
+Show Collections:
+$ show collections
 ***********
+
 Create a collection named 'comments'
-db.createCollection('comments')
+$ db.createCollection('comments')
+
 ***********
+
 Drop a collection named 'comments'
 db.comments.drop()
 
@@ -133,24 +136,21 @@ db.comments.find().sort({member_since:-1 }).pretty()    -- sort in descending or
 
 Update a row
 
-this will update all the records that matches the object attributes ( given as 1st param) with the object passed in 2nd param :
+this will update the record that matches the object attributes ( given as 1st param) with the object passed in 2nd param :
 
-db.comments.update({name: 'Shubham'},
-{'name': 'Harry',
-    'lang': 'JavaScript',
-    'member_since': 51
-})
+mydatabase> db.comments.updateOne({ name: 'Shubham' }, 
+    { $set: { 'name': 'Harry', 'lang': 'JavaScript', 'member_since': 51 } }
+);
 
 
-nUpserted   --  if you want a new object , if there is no matched object for update,
+upserted   --  if you want a new object , if there is no matched object for update,
 
-		 by default it is false , so you can do like
+By default upsert is false , so you can do like
 
-db.comments.update({name: 'Shubham'},
-{'name': 'Harry',
-    'lang': 'JavaScript',
-    'member_since': 51
-}, {upsert: true})
+mydatabase> db.comments.updateOne({ name: 'Shubham' }, 
+    {$set: { 'name': 'Harry', 'lang': 'JavaScript', 'member_since': 51 } }, 
+    {upsert: true}
+);
 
 *************************
 Mongodb Increment Operator
@@ -159,9 +159,9 @@ This will increment the value of  member_since by 2 ( member_since : member_sinc
 
 db.comments.update( {name: 'Rohan'},
     {
-	$inc:{
-	    member_since: 2
-	}
+        $inc:{
+            member_since: 2
+        }
     }
 )
 

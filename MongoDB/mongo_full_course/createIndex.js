@@ -8,26 +8,37 @@
 //? Also we can add explain('executionStats') to understand more in depth
 
 //? Find name= air fryer from the products collections
-// db.products.explain('executionStats').find({'name':'Air Fryer'})
+db.products.explain('executionStats').find({ 'name': 'Air Fryer' })
 //! executionTimeMillis: 18,
+
+// **************************************************************************
 
 //* Creating Indexes
 //? Indexes can be created using the createIndex() method.
 //? syntax: db.collectionName.createIndex({ fieldName: 1 });
 //? In this case, 1 represents ascending order, and -1 would be descending order.
 
-// db.products.createIndex({name:1})
+db.products.createIndex({ name: 1 })
 //! executionTimeMillis: 8
 
+// **************************************************************************
+
 //* Getting Indexes
-// db.products.getIndexes();
+db.products.getIndexes();
+
 //?Did you realize that _id is already there? _id is automatically added by mongodb and it’s a default unique index.
 
+// **************************************************************************
+
 //* Removing an index
-// db.products.dropIndex({ name: 1 });
+db.products.dropIndex({ name: 1 });
+
+// **************************************************************************
 
 //* Creating a unique index
-// db.users.createIndex({ email: 1 }, { unique: true });
+db.users.createIndex({ email: 1 }, { unique: true });
+
+// **************************************************************************
 
 //* When not to use indexes?
 
