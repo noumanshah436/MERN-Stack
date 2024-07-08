@@ -1,0 +1,125 @@
+http://localhost:5000
+
+**********************************
+
+register:
+
+POST http://localhost:5000/api/users/register
+
+body:
+{
+    "username": "Nouman",
+    "email": "nouman@gmail.com",
+    "password": "12345678"
+}
+
+response:
+{
+    "_id": "651739cc9b8874d630f516ff",
+    "email": "nouman@gmail.com"
+}
+
+**********************************
+
+login:
+
+POST http://localhost:5000/api/users/login
+
+body:
+{
+    "email": "nouman@gmail.com",
+    "password": "12345678"
+}
+
+response:
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTm91bWFuIiwiZW1haWwiOiJub3VtYW5AZ21haWwuY29tIiwiaWQiOiI2NTE3MzljYzliODg3NGQ2MzBmNTE2ZmYifSwiaWF0IjoxNjk2MDIxMDgzLCJleHAiOjE2OTYwMjE5ODN9.m_4Eh4Ex9czJFsNnLhpni7E7wSJ8ginvWMCQBAmEfR0"
+}
+
+
+**********************************
+
+http://localhost:5000/api/users/current
+
+also provide bearer accessToken:
+1) we can provide toekn directly in bearer toekn
+2) or we can add `Authorization` header as 
+    Bearer your_token
+
+response:
+{
+    "username": "Nouman",
+    "email": "nouman@gmail.com",
+    "id": "651739cc9b8874d630f516ff"
+}
+
+**********************************
+
+create contact:
+
+POST http://localhost:5000/api/contacts
+
+body:
+{
+    "name": "Syed Nouman",
+    "email": "noumanshah436@gmail.com",
+    "phone": "03098286027"
+}
+
+Also add bearer token 
+
+response:
+{
+    "user_id": "651739cc9b8874d630f516ff",
+    "name": "Syed Nouman",
+    "email": "noumanshah436@gmail.com",
+    "phone": "03098286027",
+    "_id": "6517417d08c040ae62f5ad8e",
+    "createdAt": "2023-09-29T21:28:29.106Z",
+    "updatedAt": "2023-09-29T21:28:29.106Z",
+    "__v": 0
+}
+
+**********************************
+
+get all contacts of the signin user
+
+GET http://localhost:5000/api/contacts
+
+Also add bearer token 
+
+**********************************
+
+Update contact:
+
+PUT http://localhost:5000/api/contacts/6517417d08c040ae62f5ad8e
+
+body to update:
+{
+    "name": "Syed Nouman",
+    "email": "nomi@gmail.com",
+    "phone": "03098286027"
+}
+
+Also add bearer token 
+
+response:
+{
+    "_id": "6517417d08c040ae62f5ad8e",
+    "user_id": "651739cc9b8874d630f516ff",
+    "name": "Syed Nouman",
+    "email": "nomi@gmail.com",
+    "phone": "03098286027",
+    "createdAt": "2023-09-29T21:28:29.106Z",
+    "updatedAt": "2023-09-29T21:37:47.882Z",
+    "__v": 0
+}
+
+**********************************
+delete contact:
+
+DELETE http://localhost:5000/api/contacts/6517417d08c040ae62f5ad8e
+
+Also add bearer token 
+
+**********************************

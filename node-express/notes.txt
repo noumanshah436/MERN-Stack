@@ -1,0 +1,14 @@
+
+Node evaluate our code with two options:
+1) REPl
+read eval print loop
+open terminal and type node and hit enter.
+REPL is just for playing around
+
+2) CLI executable
+
+
+
+************************
+
+SSR = server side rendering

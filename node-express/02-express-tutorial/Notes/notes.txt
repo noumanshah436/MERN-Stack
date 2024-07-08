@@ -1,0 +1,23 @@
+express is a minimal and flexible node.js web app framework,
+designed to make developing websites , web apps and APIs mush faster and easier
+
+
+****************************
+
+just copy the code from files and paste in app.js file and run using following command:
+1) node app.js
+2) nodemon app.js       ( nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected. )
+3) npm start            ( as we declare in the package.json file)
+
+*********
+
+I have added extra files assuming i am in app.js file, so take care if you run from different directory.
+
+****************************
+
+
+https://expressjs.com/en/4x/api.html
+
+**************************
+
+npm i morgan

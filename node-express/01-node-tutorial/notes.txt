@@ -1,0 +1,25 @@
+file
+
+1-7  = general synatax and out own modules
+
+****************************
+
+dev dependencides = depencies we need only in development
+
+npm i nodemon -D
+-D or --save-dev
+
+****************************
+
+
+
+just copy the code from files and paste in app.js file and run using following command:
+1) node app.js
+2) nodemon app.js       ( nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected. )
+3) npm start            ( as we declare in the package.json file)
+
+****************************
+
+run from the root directory
+
+****************************

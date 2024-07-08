@@ -1,0 +1,27 @@
+https://cloud.mongodb.com/v2/651719bc70316118e08f1c87#/clusters/detail/noumanclustor
+
+https://www.youtube.com/watch?v=H9M02of22z4   - 34:00
+
+Mongodb setup:
+
+1) Go to https://www.mongodb.com/ and signup for free
+2) we need to setup things for the first time  ( see video link above )
+
+3)
+Install vs-code extension "Mongodb" and add this string to connect
+Got it from https://cloud.mongodb.com/
+    overview > connect-button > mongodb-compass > Copy the connection string
+
+connect with vscode by providing required string:
+
+4)
+Got it from https://cloud.mongodb.com/
+    overview > connect-button > drivers > Copy the connection string
+
+connection string:
+
+******************************************
+
+
+mongoose:
+object model design schema for our entities and it help us to connect with our mongodb database

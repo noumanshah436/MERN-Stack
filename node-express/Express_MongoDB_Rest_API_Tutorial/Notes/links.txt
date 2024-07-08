@@ -1,0 +1,13 @@
+https://cloud.mongodb.com/v2#/org/651719bc70316118e08f1c81/projects
+
+Go to clusters and find the database 
+
+**********************************************
+
+
+video: https://www.youtube.com/watch?v=H9M02of22z4 
+
+
+mongoose:
+
+https://mongoosejs.com/docs/guide.html

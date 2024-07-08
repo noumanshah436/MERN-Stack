@@ -1,0 +1,36 @@
+https://www.youtube.com/watch?v=H9M02of22z4
+
+
+1) npm init 
+give name and other info and it will create package.json file
+
+2)
+npm install express
+npm i nodemon -D
+npm i detenv       ( for environment variables)
+npm i bcrypt       ( for encrypting password )
+
+npm i express-async-handler  
+- handle our exceptions inside the async express routes
+- we can manually handle exceptions using try catch block
+- but asyncHandler is better way to handle
+- to use it we just need to wrap our async function in asyncHandler
+- Now we don't need to add try catch block, it automatically handle it
+
+3) add scripts
+
+**************************************************
+
+How to create API's:
+
+1) create simple CRUD routes with simple json response and test them
+2) Move all callback functions to controllers
+3) To accept body parameters, we need to register a middleware
+    app.use(express.json());
+4) Add middleware to handle 
+5) MongoDB setup and configuration
+6) create models and write business logic to controllers 
+7) Add user model and User Routes - Registration, Login & Current
+8) User Registration & Password Hashing
+9) JWT Access Token & User Login 
+10) 
