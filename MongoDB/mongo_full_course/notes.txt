@@ -3,6 +3,7 @@ Video
 https://www.youtube.com/watch?v=rU9ZODw5yvU
 
 
+3:52:33
 ***************************************
 
 check if the MongoDB Database Server is running:
@@ -21,6 +22,7 @@ $ mongosh
 
 
 this will connect with the running server, now we can run our queries here
+
 ***************************************
 
 
