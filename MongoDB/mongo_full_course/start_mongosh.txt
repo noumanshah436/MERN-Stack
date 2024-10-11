@@ -16,5 +16,27 @@ You can opt-out by running the disableTelemetry() command.
    2024-07-03T20:22:40.905+05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
    2024-07-03T20:22:40.905+05:00: vm.max_map_count is too low
 ------
+test> show dbs
 
-test> show dbs;
+admin        40.00 KiB
+config       72.00 KiB
+local        72.00 KiB
+mern_admin   72.00 KiB
+mydatabase  184.00 KiB
+shop        856.00 KiB
+test          8.00 KiB
+
+------
+
+test> use shop
+
+switched to db shop
+
+------
+
+shop> show collections;
+
+comments
+products
+sales
+shop> 
