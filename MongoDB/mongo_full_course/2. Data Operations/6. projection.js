@@ -1,6 +1,6 @@
 //* Projection
 
-//  specify which fields to include or exclude in the returned documents. 
+// Specify which fields to include or exclude in the returned documents. 
 // This is done using the find method, where you provide a second argument that defines the projection. 
 
 // Including Specific Fields: To include only specific fields in the query result, you can use the projection with a value of 1 for the fields you want to include.

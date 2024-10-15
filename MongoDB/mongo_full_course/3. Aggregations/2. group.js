@@ -6,7 +6,7 @@
 
 // The $group stage groups documents by specified fields and performs aggregation functions. it is like the reduce methods in JS
 
-// when dealing with $group stage we need to pass $sign for our existing field not the one we are going to create
+// when dealing with $group stage we need to pass $ sign for our existing field not the one we are going to create
 // syntax :
 //  {
 //   $group:
