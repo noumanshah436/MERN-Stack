@@ -1,3 +1,7 @@
+
+$ sudo systemctl start mongod
+
+
 $ mongosh
 Current Mongosh Log ID:	66856e6098957de352149f47
 Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.10

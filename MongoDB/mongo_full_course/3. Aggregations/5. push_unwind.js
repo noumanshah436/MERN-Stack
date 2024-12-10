@@ -62,6 +62,11 @@ db.products.aggregate([
   },
 ]);
 
+// But we have a phe problem with above query that it is giving nested arrays
+
+// see more or `6. index.js` file.
+
+
 // ************************************************************************
 //* $unwind
 // ************************************************************************
@@ -185,7 +190,9 @@ db.products.aggregate([
 //  Combining `$push` and `$unwind`
 // ************************************************************************
 
-// You can combine `$push` and `$unwind` in an aggregation pipeline to achieve more complex data transformations. For example, if we want to group students by class and then list each student separately with their class:
+// You can combine `$push` and `$unwind` in an aggregation pipeline to achieve more complex data transformations. 
+// For example, if we want to group students by class and then list each student separately with their class:
+
 
 db.students.aggregate([
   {
