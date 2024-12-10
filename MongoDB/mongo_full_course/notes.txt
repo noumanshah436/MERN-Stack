@@ -7,6 +7,12 @@ https://www.youtube.com/watch?v=rU9ZODw5yvU
 
 ***************************************
 
+MongoDB Playlist in Hindi 
+
+https://www.youtube.com/playlist?list=PLA3GkZPtsafZydhN4nP0h7hw7PQuLsBv1
+
+***************************************
+
 check if the MongoDB Database Server is running:
 
 $ sudo systemctl status mongod 
